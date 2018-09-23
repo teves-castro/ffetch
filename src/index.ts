@@ -4,8 +4,8 @@ import { task, Task } from 'fp-ts/lib/Task'
 import { StatusError, ConnectionError, FetchError, ParserError } from './errors'
 
 interface FRequestInit<E, T> {
-  parse(r: Response): Promise<T>
-  parseLeft(r: Response): Promise<E>
+  readonly parse: (r: Response) => Promise<T>
+  readonly parseLeft: (r: Response) => Promise<E>
 }
 
 function parse<T>(response: Response): Promise<T | string> {

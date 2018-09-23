@@ -34,7 +34,11 @@
   },
   "lint-staged": {
     "linters": {
-      "**/*.{js,ts,tsx,json,css,md}": [
+      "**/*.{js,json,css,md}": [
+        "prettier --write",
+        "git add"
+      ],
+      "**/*.{ts,tsx}": [
         "prettier --write",
         "tslint --project tsconfig.json",
         "git add"
@@ -70,6 +74,7 @@
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.15.0",
     "tslint-config-standard": "^8.0.1",
+    "tslint-immutable": "^4.7.0",
     "typescript": "^3.0.3"
   },
   "dependencies": {
